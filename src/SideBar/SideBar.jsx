@@ -10,6 +10,7 @@ import {
 } from "../Assets/Constant";
 import { AiFillHome } from "react-icons/ai";
 import { TbLogout2 } from "react-icons/tb";
+import ToggleTheme from "../ToggleTheme";
 
 const SideBar = () => {
   const sideBarItems = [
@@ -50,7 +51,7 @@ const SideBar = () => {
     >
       <Flex direction={"column"} gap={10} w="full" height={"full"}>
         {/* Desktop Logo */}
-        <RouterLink to="/">
+        <RouterLink to="/" >
           <Box pl={2} display={{ base: "none", md: "block" }} cursor="pointer">
             <InstagramLogo />
           </Box>
@@ -65,6 +66,7 @@ const SideBar = () => {
             _hover={{ bg: "whiteAlpha.200" }}
             w={10}
             cursor="pointer"
+            
           >
             <InstagramMobileLogo />
           </Box>
@@ -79,9 +81,9 @@ const SideBar = () => {
               placement="right"
               ml={1}
               openDelay={500}
-              display={{base:"block",md:"none"}}
+              display={{base:"block",md:"none"}} 
             >
-              <RouterLink to={item.link || ""} style={{ textDecoration: "none" }}>
+              <RouterLink to={item.link || ""} style={{ textDecoration: "none" }} >
                 <Flex
                   alignItems="center"
                   gap={4}
@@ -89,6 +91,7 @@ const SideBar = () => {
                   borderRadius={6}
                   p={2}
                   w={{ base: 10, md: "full" }}
+                   marginTop={"auto"}
                   justifyContent={{base:"center",md:"flex-start"}}
                 >
                   {item.icon}
@@ -106,8 +109,8 @@ const SideBar = () => {
               ml={1}
               openDelay={500}
               display={{base:"block",md:"none"}}
-            >
-              <RouterLink to={"/auth"} style={{ textDecoration: "none" }}>
+            > 
+              <RouterLink to={"/auth"} style={{ textDecoration: "none" }} >
                 <Flex
                   alignItems="center"
                   gap={4}
@@ -116,7 +119,12 @@ const SideBar = () => {
                   p={2}
                   w={{ base: 10, md: "full" }}
                   justifyContent={{base:"center",md:"flex-start"}}
+                 
                 >
+                  {/* <Box>
+                  <ToggleTheme/>
+                  </Box> */}
+                
                  < TbLogout2  size={25}/>
                   <Box display={{ base: "none", md: "block" }}>LogOut</Box>
                 </Flex>

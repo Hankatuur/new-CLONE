@@ -3,6 +3,9 @@ import React from 'react'
 import SideBar from '../../SideBar/SideBar'
 import { useLocation } from 'react-router-dom'
 
+// instead of adding SideBar page To every component ,we can add it only once to the pageLayout component
+// and wrap the children with it,This way we can have a sidebar on every page except AuthPage
+
 const PageLayout = ({children}) => {
     const{pathname} = useLocation()
   return (
